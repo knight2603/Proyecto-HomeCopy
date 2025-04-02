@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(180deg, #f0f4f8 0%, #d9e2ec 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+.ghost {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+    animation: float 6s ease-in-out infinite;
+}
+
+.ghost-body {
+    background: #94a3b8;
+    height: 100%;
+    border-radius: 60px 60px 0 0;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.ghost-eyes {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    gap: 20px;
+}
+
+.eye {
+    width: 12px;
+    height: 12px;
+    background: #1e293b;
+    border-radius: 50%;
+}
+
+.ghost-bottom {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+}
+
+.ghost-bottom::before,
+.ghost-bottom::after {
+    content: '';
+    position: absolute;
+    background: #94a3b8;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.ghost-bottom::before {
+    left: 20px;
+}
+
+.ghost-bottom::after {
+    right: 20px;
+}
+
+h1 {
+    font-size: 6rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #334155;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #4f46e5;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.home-button:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+.home-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 4rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .ghost {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME COPY STORE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body class="bg-gray-50">
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <button><a href="Login2.html">Volver</a></button>
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <img src="images/download.png"
+                         class="h-24 w-auto mr-4">
+                    <h1 class="text-xl font-semibold text-gray-900">HOME COPY PAPELERIA J&D</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="cartButton" class="relative p-2 text-gray-600 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        <span id="cartCount" class="absolute -top-1 -right-1 bg-blue-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                    </button>
+                    <div class="text-sm text-gray-700">Bienvenido, Usuario</div>
+                    <button onclick="if(confirm('¿Desea cerrar sesión?')) window.location.href='login3.html'" 
+                            class="text-gray-600 hover:text-gray-900">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" 
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </header> 
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Filters -->
+        <div class="mb-6">
+            <div class="flex space-x-4">
+                <select id="categoryFilter" class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                    <option value="">Todas las categorías</option>
+                    <option value="Cuadernos">Cuadernos</option>
+                    <option value="Escritura">Escritura</option>
+                    <option value="Papel">Papel</option>
+                    <option value="Archivo">Archivo</option>
+                </select>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Buscar productos..." 
+                    class="flex-1 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                >
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Products will be inserted here by JavaScript -->
+        </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-xl font-semibold text-gray-800">Carrito de Compras</h2>
+                <button id="closeCartModal" class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems" class="space-y-4">
+                    <!-- Cart items will be inserted here -->
+                </div>
+                <div class="border-t border-gray-200 mt-4 pt-4">
+                    <div class="flex justify-between text-lg font-semibold">
+                        <span>Total:</span>
+                        <span id="cartTotal">$0.000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="clearCartButton" class="btn-secondary">Vaciar Carrito</button>
+                <button id="checkoutButton" class="btn-primary">Realizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-xl font-semibold text-gray-800">Finalizar Compra</h2>
+                <button id="closeCheckoutModal" class="modal-close">&times;</button>
+            </div>
+            <form id="checkoutForm" class="modal-body">
+                <div class="form-group">
+                    <label for="name">Nombre Completo</label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección de Envío</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                    <span class="error-message" id="addressError"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancelCheckout" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Confirmar Pedido</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/pageusuarios.js"></script>
+</body>
+</html>
