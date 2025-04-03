@@ -2,52 +2,61 @@ import { validateEmail, validatePassword, validateRequired } from './validators.
 import { authenticateUser } from './auth.js';
 import { showError, clearError } from './ui.js';
 
-const initializeLoginForm = () => {
-  const loginForm = document.getElementById('login-form');
-  if (!loginForm) {
-    console.error('Login form not found');
-    return;
-  }
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('login-form');
+    const passwordInput = document.getElementById('contraseña');
+    const togglePassword = document.getElementById('togglePassword');
+    const errorMessage = document.getElementById('error-message');
 
-  loginForm.addEventListener('submit', handleSubmit);
-};
+    // Toggle password visibility
+    togglePassword.addEventListener('click', function() {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+        
+        // Change eye icon
+        togglePassword.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+    });
 
-const handleSubmit = (event) => {
-  event.preventDefault();
-  clearError();
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        clearError();
 
-  const email = document.getElementById('correo')?.value ?? '';
-  const role = document.getElementById('rol')?.value ?? '';
-  const password = document.getElementById('contraseña')?.value ?? '';
+        const email = document.getElementById('correo').value;
+        const role = document.getElementById('rol').value;
+        const password = passwordInput.value;
 
-  const emailRequired = validateRequired(email, 'correo');
-  const passwordRequired = validateRequired(password, 'contraseña');
-  const roleRequired = validateRequired(role, 'rol');
+        // Validate required fields
+        const emailRequired = validateRequired(email, 'correo');
+        const passwordRequired = validateRequired(password, 'contraseña');
+        const roleRequired = validateRequired(role, 'rol');
 
-  if (!emailRequired.isValid || !passwordRequired.isValid || !roleRequired.isValid) {
-    showError('Por favor, complete todos los campos requeridos.');
-    return;
-  }
+        if (!emailRequired.isValid || !passwordRequired.isValid || !roleRequired.isValid) {
+            showError('Por favor, complete todos los campos requeridos.');
+            return;
+        }
 
-  if (!validateEmail(email)) {
-    showError('Por favor, ingrese un correo electrónico válido.');
-    return;
-  }
+        // Validate email format
+        if (!validateEmail(email)) {
+            showError('Por favor, ingrese un correo electrónico válido.');
+            return;
+        }
 
-  const passwordValidation = validatePassword(password);
-  if (!passwordValidation.isValid) {
-    showError(passwordValidation.message);
-    return;
-  }
+        // Validate password requirements
+        const passwordValidation = validatePassword(password);
+        if (!passwordValidation.isValid) {
+            showError(passwordValidation.message);
+            return;
+        }
 
-  const authResult = authenticateUser(email, role, password);
-  
-  if (authResult.success) {
-    alert(authResult.message);
-    window.location.href = 'pageadmin.html';
-  } else {
-    showError(authResult.message);
-  }
-};
-
-document.addEventListener('DOMContentLoaded', initializeLoginForm);
+        // Attempt authentication
+        const authResult = authenticateUser(email, role, password);
+        
+        if (authResult.success) {
+            alert(authResult.message);
+            window.location.href = 'pageadmin.html';
+        } else {
+            showError(authResult.message);
+        }
+    });
+});
