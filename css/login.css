@@ -56,6 +56,8 @@ body {
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
 }
 
 .container button:hover {
@@ -87,6 +89,7 @@ body {
 .form-group {
     width: 100%;
     margin-bottom: 15px;
+    position: relative;
 }
 
 .form-group label {
@@ -94,6 +97,24 @@ body {
     margin-bottom: 5px;
     color: #333;
     font-size: 14px;
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6B7280;
+    transition: color 0.2s;
+}
+
+.toggle-password:hover {
+    color: #374151;
 }
 
 #error-message {
@@ -114,7 +135,6 @@ body {
     color: #fff;
 }
 
-.volver a {
-    text-decoration: none;
-    color: #fff;
+.volver:hover {
+    color: rgba(255, 255, 255, 0.8);
 }
