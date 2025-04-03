@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <h2>Registro</h2>
-        <form action="#" method="POST">
+        <form action="javascript.void(0);" id="register-form">
+            <p>Complete el formulario para registrarse</p>
             <div class="form-group">
                 <label for="username">Nombre de usuario:</label>
                 <input type="text" id="username" name="username" required>
@@ -19,14 +20,24 @@
                 <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+                <label for="role">Rol</label>
+                <select id="role" required>
+                    <option value="">Seleccione un rol</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="user">Usuario</option>
+                    <option value="proveer">Proveedor</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="contraseña">Contraseña</label>
+                <div class="password-container">
+                    <input type="password" id="contraseña" required>
+                    <span class="toggle-password" id="togglePassword">👁️</span>
+                </div>
             </div>
             <button type="submit">Registrarse</button>
         </form>
-        <div class="back-link">
-            <a href="index.html">Volver a la página principal</a>
-        </div>
     </div>
+    <script src="js/verf.js"></script>
 </body>
 </html>
