@@ -34,7 +34,10 @@
             </div>
             <div class="form-group">
                 <label for="contraseña">Contraseña</label>
-                <input type="password" id="contraseña" required placeholder="Ingrese su contraseña">
+                <div class="password-container">
+                    <input type="password" id="contraseña" required placeholder="Ingrese su contraseña">
+                    <span class="toggle-password" id="togglePassword">👁️</span>
+                </div>
             </div>
             <div id="error-message" style="display: none;"></div>
             <button type="submit">Iniciar sesión</button>
