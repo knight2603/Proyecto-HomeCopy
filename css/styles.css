@@ -68,7 +68,9 @@ nav{
     width: 70%;
 
 }
-
+.nav-linksbtn{
+    gap: 3rem;
+}
 .btn{
     padding: 1rem 2rem;
     font-size: 1rem;
