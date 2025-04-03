@@ -6,10 +6,14 @@
     border: none;
     box-sizing: border-box;
 }
-
+.cardimages{
+    border-radius: 40px;
+    display: flex;
+}
 img{
     width: 100%;
     display: flex;
+    border-radius: 20px;
 }
 a{
     text-decoration: none;
