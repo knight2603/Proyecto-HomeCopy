@@ -122,6 +122,11 @@ header{
     gap: 2rem;
 
 }
+header .header2{
+    color: #fff;
+    text-align: center;
+}
+
 
 header .content h4{
     margin-bottom: 1rem;
@@ -130,6 +135,7 @@ header .content h4{
     font-weight: 600;
 
 }
+
 
 header .content h1 {
     color: #fff;
@@ -212,6 +218,7 @@ section .header{
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
+    text-align: center;
 
 }
 
@@ -247,6 +254,7 @@ footer .column .logo{
 
 footer .column p{
     color: #ccc;
+    text-align: left;
 }
 
 footer .column .socials{
