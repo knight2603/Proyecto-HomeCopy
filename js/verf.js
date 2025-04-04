@@ -33,3 +33,4 @@ document.addEventListener("DOMContentLoaded", function(){
         console.error("No se encontró el formulario de registro.");
        }
 });
+
