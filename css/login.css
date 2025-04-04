@@ -138,3 +138,15 @@ body {
 .volver:hover {
     color: rgba(255, 255, 255, 0.8);
 }
+.forgot-password {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #007bff; 
+    text-decoration: none; 
+    text-align: center  ;
+}
+
+.forgot-password:hover {
+    text-decoration: underline; 
+}
