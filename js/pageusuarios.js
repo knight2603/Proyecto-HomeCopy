@@ -1,268 +1,236 @@
-let products = [
+const products = [
     {
         id: 1,
         name: 'Cuaderno Profesional',
         category: 'Cuadernos',
-        price: 20.000,
+        price: 20000,
         stock: 50,
         sku: 'CUA-001',
-        description: 'Cuaderno Argollado 5 materias con diseño'
+        description: 'Cuaderno Argollado 5 materias con diseño',
+        image: 'images/product2.png'
     },
     {
         id: 2,
         name: 'Cuaderno Profesional',
         category: 'Cuadernos',
-        price: 17.000,
+        price: 17000,
         stock: 100,
         sku: 'CUA-002',
-        description: 'Cuaderno Argollado 100 hojas con diseño'
+        description: 'Cuaderno Argollado 100 hojas con diseño',
+        image: 'images/product1.png'
     },
     {
         id: 3,
         name: 'Cuaderno Escolar',
         category: 'Cuadernos',
-        price: 11.000,
+        price: 11000,
         stock: 70,
         sku: 'CUA-003',
-        description: 'Cuaderno 100 hojas Cuadriculado pasta dura'
+        description: 'Cuaderno 100 hojas Cuadriculado pasta dura',
+        image: 'images/product3.png'
     },
     {
         id: 4,
         name: 'Cuaderno Normal',
         category: 'Cuadernos',
-        price: 7.000,
+        price: 7000,
         stock: 200,
         sku: 'CUA-004',
-        description: 'Cuaderno 100 hojas Cuadriculado con stikers'
+        description: 'Cuaderno 100 hojas Cuadriculado con stikers',
+        image: 'images/product4.png'
     },
     {
         id: 5,
         name: 'Cuaderno Sencillo',
         category: 'Cuadernos',
-        price: 3.500,
+        price: 3500,
         stock: 250,
         sku: 'CUA-005',
-        description: 'Cuaderno 100 hojas cuadriculado'
+        description: 'Cuaderno 100 hojas cuadriculado',
+        image: 'images/product5.png'
     },
     {
         id: 6,
         name: 'Lápiz Mirado',
         category: 'Escritura',
-        price: 1.300,
+        price: 1300,
         stock: 500,
         sku: 'LAP-001',
-        description: 'Lápiz de grafito HB #2 Mirado'
+        description: 'Lápiz de grafito HB #2 Mirado',
+        image: 'images/product6.png'
     },
     {
         id: 7,
         name: 'Lápiz Faber Castell',
         category: 'Escritura',
-        price: 1.800,
+        price: 1800,
         stock: 500,
         sku: 'LAP-002',
-        description: 'Lápiz de grafito HB Faber Castell'
+        description: 'Lápiz de grafito HB Faber Castell',
+        image: 'images/product7.png'
     },
     {
         id: 8,
         name: 'Bolígrafo Azul Paper Matte',
         category: 'Escritura',
-        price: 1.000,
+        price: 1000,
         stock: 500,
         sku: 'BOL-001',
-        description: 'Bolígrafo punta fina, tinta azul'
+        description: 'Bolígrafo punta fina, tinta azul',
+        image: 'images/product8.png'
     },
     {
         id: 9,
         name: 'Bolígrafo Negro Paper Matte',
         category: 'Escritura',
-        price: 1.000,
+        price: 1000,
         stock: 500,
         sku: 'BOL-002',
-        description: 'Bolígrafo punta fina, tinta Negra'
+        description: 'Bolígrafo punta fina, tinta Negra',
+        image: 'images/product9.png'
     },
     {
         id: 10,
         name: 'Bolígrafo Rojo Offi Esco',
         category: 'Escritura',
-        price: 1.200,
+        price: 1200,
         stock: 500,
         sku: 'BOL-003',
-        description: 'Bolígrafo tinta Negra'
+        description: 'Bolígrafo tinta Negra',
+        image: 'images/product10.png'
     },
     {
         id: 11,
         name: 'Block papel blanco tamaño carta',
         category: 'Papel',
-        price: 3.800,
+        price: 3800,
         stock: 20,
         sku: 'BLG-001',
-        description: 'Block Tamaño carta color blanco'
+        description: 'Block Tamaño carta color blanco',
+        image: 'images/product11.png'
     },
     {
         id: 12,
         name: 'Block cuadriculado tamaño carta',
         category: 'Papel',
-        price: 3.400,
+        price: 3400,
         stock: 18,
         sku: 'BLG-002',
-        description: 'Block cuadriculado tamaño carta'
+        description: 'Block cuadriculado tamaño carta',
+        image: 'images/product12.png'
     },
     {
         id: 13,
         name: 'Block papel blanco tamaño oficio',
         category: 'Papel',
-        price: 4.200,
+        price: 4200,
         stock: 21,
         sku: 'BLG-003',
-        description: 'Block papel blanco tamaño oficio'
+        description: 'Block papel blanco tamaño oficio',
+        image: 'images/product13.png'
     },
     {
         id: 14,
         name: 'Block cuadriculado tamaño oficio',
         category: 'Papel',
-        price: 4.300,
+        price: 4300,
         stock: 23,
         sku: 'BLG-004',
-        description: 'Block cuadriculado tamaño oficio'
+        description: 'Block cuadriculado tamaño oficio',
+        image: 'images/product14.png'
     },
     {
         id: 15,
         name: 'Block iris',
         category: 'Papel',
-        price: 2.800,
+        price: 2800,
         stock: 40,
         sku: 'BLG-005',
-        description: 'Block iris surtido'
+        description: 'Block iris surtido',
+        image: 'images/product15.png'
     },
     {
         id: 16,
         name: 'Carpeta Tamaño Carta',
         category: 'Archivo',
-        price: 3.500,
+        price: 3500,
         stock: 50,
         sku: 'ARC-001',
-        description: 'Carpeta Azul tamaño Carta'
+        description: 'Carpeta Azul tamaño Carta',
+        image: 'images/product16.png'
     },
     {
         id: 17,
         name: 'Carpeta Tamaño Oficio',
         category: 'Archivo',
-        price: 4.000,
+        price: 4000,
         stock: 40,
         sku: 'ARC-002',
-        description: 'Carpeta tamaño Oficio color Rojo'
+        description: 'Carpeta tamaño Oficio color Rojo',
+        image: 'images/product17.png'
     },
     {
         id: 18,
         name: 'Folder',
         category: 'Archivo',
-        price: 4.500,
+        price: 4500,
         stock: 35,
         sku: 'ARC-003',
-        description: 'Folder con diseño'
+        description: 'Folder con diseño',
+        image: 'images/product18.png'
     },
     {
         id: 19,
         name: 'Folder sencillo',
         category: 'Archivo',
-        price: 4.000,
+        price: 4000,
         stock: 25,
         sku: 'ARC-004',
-        description: 'Folder de carton'
+        description: 'Folder de carton',
+        image: 'images/product19.png'
     },
     {
         id: 20,
         name: 'Carpeta de carton',
         category: 'Archivo',
-        price: 2.000,
+        price: 2000,
         stock: 100,
         sku: 'ARC-005',
-        description: 'Carpeta de carton sencilla'
-    },
+        description: 'Carpeta de carton sencilla',
+        image: 'images/product20.png'
+    }
+
 ];
 
-// Shopping cart
+// Cart state
 let cart = [];
+let isLoggedIn = false; // Track login status
 
 // DOM Elements
 const productsGrid = document.getElementById('productsGrid');
-const cartButton = document.getElementById('cartButton');
-const cartCount = document.getElementById('cartCount');
-const cartModal = document.getElementById('cartModal');
-const closeCartModal = document.getElementById('closeCartModal');
-const cartItems = document.getElementById('cartItems');
-const cartTotal = document.getElementById('cartTotal');
-const clearCartButton = document.getElementById('clearCartButton');
-const checkoutButton = document.getElementById('checkoutButton');
 const categoryFilter = document.getElementById('categoryFilter');
 const searchInput = document.getElementById('searchInput');
+const cartCount = document.querySelector('.cart-count');
+const productModal = document.getElementById('productModal');
+const cartModal = document.getElementById('cartModal');
 const checkoutModal = document.getElementById('checkoutModal');
-const checkoutForm = document.getElementById('checkoutForm');
-const closeCheckoutModal = document.getElementById('closeCheckoutModal');
-const cancelCheckout = document.getElementById('cancelCheckout');
+const loginModal = document.getElementById('loginModal');
+const cartBtn = document.getElementById('cartBtn');
+const clearCartBtn = document.getElementById('clearCartBtn');
+const checkoutBtn = document.getElementById('checkoutBtn');
+const cartItems = document.getElementById('cartItems');
+const cartTotal = document.getElementById('cartTotal');
 
-// Render products
-function renderProducts(productsToRender = products) {
-    productsGrid.innerHTML = '';
-    
-    productsToRender.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.className = 'bg-white rounded-lg shadow-sm p-6';
-        productCard.innerHTML = `
-            <h3 class="text-lg font-semibold text-gray-900 mb-2">${product.name}</h3>
-            <p class="text-sm text-gray-500 mb-4">${product.description}</p>
-            <div class="flex justify-between items-center">
-                <span class="text-lg font-bold text-gray-900">$${product.price.toFixed(2)}</span>
-                <button 
-                    onclick="addToCart(${product.id})"
-                    class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-                    ${product.stock === 0 ? 'disabled' : ''}
-                >
-                    ${product.stock === 0 ? 'Agotado' : 'Agregar al Carrito'}
-                </button>
-            </div>
-            <div class="mt-2 text-sm text-gray-500">
-                Stock disponible: ${product.stock}
-            </div>
-        `;
-        productsGrid.appendChild(productCard);
-    });
-}
+// Modal elements
+const modalProductName = document.getElementById('modalProductName');
+const modalProductImage = document.getElementById('modalProductImage');
+const modalProductDescription = document.getElementById('modalProductDescription');
+const modalProductPrice = document.getElementById('modalProductPrice');
+const addToCartBtn = document.getElementById('addToCartBtn');
 
-// Filter products
-function filterProducts() {
-    const category = categoryFilter.value;
-    const searchTerm = searchInput.value.toLowerCase();
-    
-    const filteredProducts = products.filter(product => {
-        const matchesCategory = !category || product.category === category;
-        const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
-                            product.description.toLowerCase().includes(searchTerm);
-        return matchesCategory && matchesSearch;
-    });
-    
-    renderProducts(filteredProducts);
-}
-
-// Cart functions
-function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    if (!product || product.stock === 0) return;
-    
-    const cartItem = cart.find(item => item.productId === productId);
-    if (cartItem) {
-        if (cartItem.quantity < product.stock) {
-            cartItem.quantity++;
-        }
-    } else {
-        cart.push({
-            productId,
-            quantity: 1
-        });
-    }
-    
-    updateCartCount();
-    showSuccessMessage('Producto agregado al carrito');
+// Functions
+function formatPrice(price) {
+    return `$${price.toLocaleString()}`;
 }
 
 function updateCartCount() {
@@ -270,171 +238,187 @@ function updateCartCount() {
     cartCount.textContent = totalItems;
 }
 
+function updateCartTotal() {
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    cartTotal.textContent = formatPrice(total);
+}
+
+function renderProducts(filteredProducts) {
+    productsGrid.innerHTML = filteredProducts.map(product => `
+        <div class="product-card" data-id="${product.id}">
+            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <div class="product-info">
+                <h3 class="product-name">${product.name}</h3>
+                <p class="product-price">${formatPrice(product.price)}</p>
+            </div>
+        </div>
+    `).join('');
+}
+
 function renderCart() {
-    cartItems.innerHTML = '';
-    let total = 0;
+    cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+            <div class="cart-item-info">
+                <h3>${item.name}</h3>
+                <p>${formatPrice(item.price)} x ${item.quantity}</p>
+            </div>
+            <p class="cart-item-price">${formatPrice(item.price * item.quantity)}</p>
+        </div>
+    `).join('');
+    updateCartTotal();
+}
+
+function filterProducts() {
+    const category = categoryFilter.value;
+    const searchTerm = searchInput.value.toLowerCase();
     
-    cart.forEach(item => {
-        const product = products.find(p => p.id === item.productId);
-        const itemTotal = product.price * item.quantity;
-        total += itemTotal;
-        
-        const cartItemElement = document.createElement('div');
-        cartItemElement.className = 'flex justify-between items-center';
-        cartItemElement.innerHTML = `
-            <div>
-                <h4 class="font-medium">${product.name}</h4>
-                <div class="text-sm text-gray-500">
-                    $${product.price.toFixed(2)} x ${item.quantity}
-                </div>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span class="font-medium">$${itemTotal.toFixed(2)}</span>
-                <button 
-                    onclick="removeFromCart(${product.id})"
-                    class="text-red-600 hover:text-red-800"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
-                </button>
-            </div>
-        `;
-        cartItems.appendChild(cartItemElement);
+    const filteredProducts = products.filter(product => {
+        const matchesCategory = !category || product.category === category;
+        const matchesSearch = product.name.toLowerCase().includes(searchTerm);
+        return matchesCategory && matchesSearch;
     });
     
-    cartTotal.textContent = `$${total.toFixed(2)}`;
+    renderProducts(filteredProducts);
 }
 
-function removeFromCart(productId) {
-    cart = cart.filter(item => item.productId !== productId);
+function showModal(modal) {
+    modal.classList.add('active');
+}
+
+function hideModal(modal) {
+    modal.classList.remove('active');
+}
+
+function showProductDetails(product) {
+    modalProductName.textContent = product.name;
+    modalProductImage.src = product.image;
+    modalProductImage.alt = product.name;
+    modalProductDescription.textContent = product.description;
+    modalProductPrice.textContent = formatPrice(product.price);
+    
+    addToCartBtn.onclick = () => {
+        addToCart(product);
+        hideModal(productModal);
+    };
+    
+    showModal(productModal);
+}
+
+function addToCart(product) {
+    const existingItem = cart.find(item => item.id === product.id);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+    
     updateCartCount();
-    renderCart();
 }
 
-function clearCart() {
-    cart = [];
-    updateCartCount();
-    renderCart();
-    cartModal.classList.add('hidden');
+function handleCheckout() {
+    if (cart.length === 0) {
+        alert('El carrito está vacío. Agrega al menos un producto antes de continuar.');
+        return;
+    }
+
+    if (!isLoggedIn) {
+        hideModal(cartModal);
+        showModal(loginModal);
+        return;
+    }
+
+    hideModal(cartModal);
+    showModal(checkoutModal);
 }
 
-// Form validation
-function validateCheckoutForm(formData) {
-    const errors = {};
-    
-    if (!formData.name.trim()) {
-        errors.name = 'El nombre es requerido';
+
+function handleLogin(event) {
+    event.preventDefault();
+    clearError(); // Por si reutilizas el mismo div de errores en el modal
+
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+    const role = 'Usuario'; // Forzamos solo el rol 'Usuario'
+
+    if (!email || !password) {
+        showError('Por favor ingrese correo y contraseña.');
+        return;
     }
-    
-    if (!formData.email.trim()) {
-        errors.email = 'El email es requerido';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        errors.email = 'Email inválido';
+
+    if (!validateEmail(email)) {
+        showError('Por favor, ingrese un correo válido.');
+        return;
     }
-    
-    if (!formData.phone.trim()) {
-        errors.phone = 'El teléfono es requerido';
-    } else if (!/^\d{10}$/.test(formData.phone.replace(/\D/g, ''))) {
-        errors.phone = 'Teléfono inválido (10 dígitos)';
+
+    const passwordValidation = validatePassword(password);
+    if (!passwordValidation.isValid) {
+        showError(passwordValidation.message);
+        return;
     }
-    
-    if (!formData.address.trim()) {
-        errors.address = 'La dirección es requerida';
+
+    const authResult = authenticateUser(email, role, password);
+
+    if (authResult.success) {
+        isLoggedIn = true;
+        hideModal(loginModal);
+        showModal(checkoutModal);
+    } else {
+        showError('Credenciales inválidas o no tienes permisos como Usuario.');
     }
-    
-    return errors;
 }
 
-function showErrors(errors) {
-    // Clear previous errors
-    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-    
-    // Show new errors
-    Object.entries(errors).forEach(([field, message]) => {
-        const errorElement = document.getElementById(`${field}Error`);
-        if (errorElement) {
-            errorElement.textContent = message;
-        }
-    });
-}
-
-function showSuccessMessage(message) {
-    const messageElement = document.createElement('div');
-    messageElement.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg';
-    messageElement.textContent = message;
-    document.body.appendChild(messageElement);
-    
-    setTimeout(() => {
-        messageElement.remove();
-    }, 3000);
-}
 
 // Event Listeners
 categoryFilter.addEventListener('change', filterProducts);
 searchInput.addEventListener('input', filterProducts);
 
-cartButton.addEventListener('click', () => {
+productsGrid.addEventListener('click', (e) => {
+    const card = e.target.closest('.product-card');
+    if (card) {
+        const productId = parseInt(card.dataset.id);
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            showProductDetails(product);
+        }
+    }
+});
+
+cartBtn.addEventListener('click', () => {
     renderCart();
-    cartModal.classList.remove('hidden');
+    showModal(cartModal);
 });
 
-closeCartModal.addEventListener('click', () => {
-    cartModal.classList.add('hidden');
+clearCartBtn.addEventListener('click', () => {
+    cart = [];
+    updateCartCount();
+    renderCart();
 });
 
-clearCartButton.addEventListener('click', clearCart);
+checkoutBtn.addEventListener('click', handleCheckout);
 
-checkoutButton.addEventListener('click', () => {
-    if (cart.length === 0) {
-        alert('El carrito está vacío');
-        return;
-    }
-    cartModal.classList.add('hidden');
-    checkoutModal.classList.remove('hidden');
+document.getElementById('loginForm').addEventListener('submit', handleLogin);
+
+// Close buttons
+document.querySelectorAll('.close-btn, .modal-close').forEach(button => {
+    button.addEventListener('click', () => {
+        hideModal(productModal);
+        hideModal(cartModal);
+        hideModal(checkoutModal);
+        hideModal(loginModal);
+    });
 });
 
-closeCheckoutModal.addEventListener('click', () => {
-    checkoutModal.classList.add('hidden');
-});
-
-cancelCheckout.addEventListener('click', () => {
-    checkoutModal.classList.add('hidden');
-});
-
-checkoutForm.addEventListener('submit', (e) => {
+// Checkout form submission
+document.getElementById('checkoutForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        address: document.getElementById('address').value
-    };
-    
-    const errors = validateCheckoutForm(formData);
-    
-    if (Object.keys(errors).length > 0) {
-        showErrors(errors);
-        return;
-    }
-    
-    // Here you would typically send the order to a server
-    // For now, we'll just show a success message and clear the cart
-    showSuccessMessage('¡Pedido realizado con éxito!');
-    clearCart();
-    checkoutModal.classList.add('hidden');
-    checkoutForm.reset();
+    alert('¡Pedido realizado con éxito!');
+    cart = [];
+    updateCartCount();
+    hideModal(checkoutModal);
 });
 
-// Close modals when clicking outside
-window.addEventListener('click', (e) => {
-    if (e.target === cartModal) {
-        cartModal.classList.add('hidden');
-    }
-    if (e.target === checkoutModal) {
-        checkoutModal.classList.add('hidden');
-    }
-});
-
-// Initial render
-renderProducts();
+// Initialize
+renderProducts(products);
 updateCartCount();
