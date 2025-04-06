@@ -6,7 +6,15 @@
     border: none;
     box-sizing: border-box;
 }
-.cardimages{
+.cardimages {
+    width: 100%;
+    height: 200px;         
+    object-fit: cover;     
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+}
+.cardimages1{
     border-radius: 40px;
     display: flex;
 }
@@ -199,15 +207,17 @@ section .header{
 
 }
 
-.product .card{
+.product .card {
     background-color: #27272a;
     padding: 1rem;
     border: 2px solid transparent;
     border-radius: 15px;
-    transition: all 0.0s ease;
-
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 580px; /* Ajusta esta altura si lo deseas */
 }
-
 .product .card:hover{
     background-color: #323232;
     border-color: #fff;
@@ -236,6 +246,93 @@ section .header{
 .product .card a:hover {
     color: #1d4ed8;
 
+}
+
+.product1{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+}
+.card1 {
+    text-align: center;
+}
+.product1 .card1{
+    background-color: #27272a;
+    padding: 1rem;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    transition: all 0.0s ease;
+    grid-column: 3 span ;
+    max-height: 400px; 
+    overflow: hidden;
+
+}
+.card1 .cardimages1 {
+    max-height: 200px;     
+    width: 100%;            
+    object-fit: cover;     
+    border-radius: 15px;  
+    display: block;         
+    margin: 0 auto;         
+}
+.product1 .card1 h4{
+    margin-bottom: 0,5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+
+}
+.product1 .card1:hover{
+    background-color: #323232;
+    border-color: #fff;
+
+}
+.product1 .card1 p{
+    color: #ccc;
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
+.product1 .card1 a{
+    color: #fff;
+    transition: all o.3s ease;
+
+}
+
+.product1 .card1 a:hover {
+    color: #1d4ed8;
+
+}
+.product1 .card1 h4{
+    margin-bottom: 0,5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-align: center;
+
+}
+.btn-ingresar {
+    display: inline-block;
+    margin: 1rem auto 0;
+    padding: 0.6rem 1.2rem;
+    background-color: #1d4ed8;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-ingresar:hover {
+    background-color: #ffffff;
+    color: #1d4ed8;
+    cursor: pointer;
 }
 
 footer{
@@ -311,3 +408,5 @@ footer .column > a:hover{
 .socials img{
     color: #fff;
 }
+
+
