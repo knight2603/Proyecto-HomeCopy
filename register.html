@@ -3,41 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/register.css">
-    <title>Registro</title>
 </head>
 <body>
     <div class="container">
-        <h2>Registro</h2>
-        <form action="javascript.void(0);" id="register-form">
-            <p>Complete el formulario para registrarse</p>
+        <h2>Iniciar Sesión</h2>
+        
+        <form class="space-y-4">
             <div class="form-group">
-                <label for="username">Nombre de usuario:</label>
-                <input type="text" id="username" name="username" required>
+                <label for="email">Correo Electrónico</label>
+                <input type="email" id="email" required>
             </div>
+            
             <div class="form-group">
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="role">Rol</label>
-                <select id="role" required>
-                    <option value="">Seleccione un rol</option>
-                    <option value="Administrador">Administrador</option>
-                    <option value="user">Usuario</option>
-                    <option value="proveer">Proveedor</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="contraseña">Contraseña</label>
+                <label for="password">Contraseña</label>
                 <div class="password-container">
-                    <input type="password" id="contraseña" required>
-                    <span class="toggle-password" id="togglePassword">👁️</span>
+                    <input type="password" id="password" required>
+                    <span id="togglePassword" class="password-toggle">👁️</span>
                 </div>
             </div>
-            <button type="submit">Registrarse</button>
+            
+            <div class="form-group">
+                <label for="confirm-password">Confirmar Contraseña</label>
+                <div class="password-container">
+                    <input type="password" id="confirm-password" required>
+                    <span id="toggleConfirmPassword" class="password-toggle">👁️</span>
+                </div>
+            </div>
+            
+            <button type="submit">Iniciar Sesión</button>
         </form>
+
+        <div class="back-link">
+            <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
     </div>
-    <script src="js/verf.js"></script>
+
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+        const confirmPasswordInput = document.getElementById('confirm-password');
+
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            togglePassword.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+
+        toggleConfirmPassword.addEventListener('click', () => {
+            const type = confirmPasswordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPasswordInput.setAttribute('type', type);
+            toggleConfirmPassword.textContent = type === 'password' ? '👁️' : '🙈';
+        });
+    </script>
 </body>
 </html>
